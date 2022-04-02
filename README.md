@@ -16,7 +16,7 @@
 
 ## Grade-Management-Program 내의 클래스
 ### 1. SubjectInfo Class
-<pre><code class="language-java">
+```java
 public class SubjectInfo {
 	//과목에 대한 정보를 저장하는 클래스
 	private String subjectName;
@@ -32,9 +32,18 @@ public class SubjectInfo {
 	}
 }
 
-</code></pre>
+```
+&nbsp; SubjectInfo 클래스는 하나의 과목에 대한 정보를 담는 클래스로, 이 객체들이 모여서 SubjectStorage 객체 하나에 저장됩니다.<br>&nbsp;
+### Methods of SubjectInfo class
+&nbsp; SubjectInfo class의 메소드 <br>
+
+>**print_subjectInfo : 과목 정보 출력**<br>
+>**getSubjectName : 과목 이름 가져오기**<br>
+<br>
+<br>
+
 ### 2. SubjectStorage Class
- <pre><code class="language-java">
+```java
  public class SubjectStorage {
 	//과목의 정보를 담고 있는 SubjectInfo 객체들을 담기 위한 HashSet
 	private HashSet<SubjectInfo> subjectSet = new HashSet<SubjectInfo>();
@@ -45,8 +54,14 @@ public class SubjectInfo {
 		this.semester = semester;
 	}
 }
- </code></pre>
+```
+&nbsp; SubjectStorage 클래스는 하나의 학기에 대한 과목들의 정보를 담는 클래스로, HashSet을 이용해 SubjectInfo 객체를 저장합니다.<br>&nbsp;
+### Methods of SubjectStorage class
+&nbsp; SubjectStorage class의 메소드 <br>
+
+>**addSubject : 과목 추가**<br>
+>**deleteSubject : 과목 삭제**<br>
+>**print_subjectSet : 해당 학기에 대한 모든 과목 정보 출력**<br>
 
 
-
-### 객체지향 프로그래밍 수업의 X-Management-Program 과제로 수행한 프로젝트입니다.
+#### *객체지향 프로그래밍 수업의 X-Management-Program 과제로 수행한 프로젝트입니다.*
