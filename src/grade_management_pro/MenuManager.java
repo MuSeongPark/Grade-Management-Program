@@ -104,7 +104,7 @@ public class MenuManager {
 	public void show_menu() {
 		//메뉴를 보여주는 함수
 		System.out.println("Hi! this is Grade-Management-Program!");
-		System.out.printf("** Select number! | Selected semester: %s **\n", selected_semester.semester);
+		System.out.printf("** Select number! | Selected semester: %s semester**\n", selected_semester.semester);
 		
 		System.out.println("1. Add Subject");
 		System.out.println("2. Delete Subject");
