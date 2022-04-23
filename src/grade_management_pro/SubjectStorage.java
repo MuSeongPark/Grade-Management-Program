@@ -1,10 +1,11 @@
 package grade_management_pro;
 import java.util.Scanner;
 
+
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class SubjectStorage {
+public class SubjectStorage extends SubjectInfo{
 	//과목의 정보를 담고 있는 SubjectInfo 객체들을 담기 위한 HashSet
 	private HashSet<SubjectInfo> subjectSet = new HashSet<SubjectInfo>();
 	String semester;
@@ -19,10 +20,11 @@ public class SubjectStorage {
 	public void addSubject() {
 		//추가할 과목에 대한 정보를 받아서 새로운 SubjectInfo 객체 생성 후, HashSet에 저장
 		Scanner input = new Scanner(System.in);
-		SubjectInfo newSubject;
+
 		String name;
 		String prof;
 		int grade;
+		SubjectInfo subject;
 		
 		System.out.printf("Subject name: ");
 		name = input.nextLine();
@@ -32,10 +34,10 @@ public class SubjectStorage {
 		
 		System.out.printf("Subject grade: ");
 		grade = input.nextInt();
-		newSubject = new SubjectInfo(name, prof, grade);
 		
-	
-		subjectSet.add(newSubject);	
+		subject = this.putSubjectInfo(name, prof, grade);
+		
+		subjectSet.add(subject);
 		System.out.println("Adding subject is completed!");
 	}
 	

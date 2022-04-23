@@ -2,17 +2,9 @@ package grade_management_pro;
 
 public class SubjectInfo {
 	//과목에 대한 정보를 저장하는 클래스
-	private String subjectName;
-	private String prof;
-	private int grade;
-	
-	
-	SubjectInfo(String subjectName, String prof, int grade){
-		this.subjectName = subjectName;
-		this.prof = prof;
-		this.grade = grade;
-		
-	}
+	protected String subjectName;
+	protected String prof;
+	protected int grade;
 	
 	
 	public void print_subjectInfo() {
@@ -22,6 +14,15 @@ public class SubjectInfo {
 	public String getSubjectName() {
 		//해당과목의 이름을 리턴하는 함수: HashSet내에서 탐색하기 위함
 		return this.subjectName;
+	}
+	
+	public SubjectInfo putSubjectInfo(String subjectName, String prof, int grade) {
+		SubjectInfo newSubject = new SubjectInfo();
+		newSubject.subjectName = subjectName;
+		newSubject.prof = prof;
+		newSubject.grade = grade;
+		
+		return newSubject;
 	}
 	
 }

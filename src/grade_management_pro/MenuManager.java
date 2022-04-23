@@ -16,10 +16,9 @@ public class MenuManager {
 	
 
 	public static void main(String[] args) {
-		MenuManager menu = new MenuManager();
 		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
-		menu.show_menu();
+		show_menu();
 		
 		while (true){
 			
@@ -31,19 +30,19 @@ public class MenuManager {
 			
 			switch (num) {
 				case 1:
-					menu.add_subject();
+					add_subject();
 					break;
 				case 2:
-					menu.delete_subject();
+					delete_subject();
 					break;
 				case 3:
-					menu.check();
+					check();
 					break;
 				case 4:
-					menu.select_semester();
+					select_semester();
 					break;
 				case 5:
-					menu.show_menu();
+					show_menu();
 					break;
 					
 			}
@@ -53,17 +52,17 @@ public class MenuManager {
 		
 	}
 	
-	public void add_subject() {
+	public static void add_subject() {
 		selected_semester.addSubject(); //과목을 추가하는 함수
 		System.out.println("If you want to look Menu, Press number 5");
 	}
 	
-	public void delete_subject() {
+	public static void delete_subject() {
 		selected_semester.deleteSubject(); //과목을 제거하는 함수
 		System.out.println("If you want to look Menu, Press number 5");
 	}
 	
-	public void check() {
+	public static void check() {
 		selected_semester.print_subjectSet(); //선택된 학기의 모든 과목을 출력해주는 함수
 		//System.out.println("Your total grade is");
 		//학점의 총합에 대해 보여줄 공간
@@ -71,7 +70,7 @@ public class MenuManager {
 
 	}
 	
-	public void select_semester() {
+	public static void select_semester() {
 		//학기를 선택하는 함수
 		Scanner input = new Scanner(System.in);
 		System.out.printf("Select one of the semesters (winter/first/summer/second)\n");
@@ -101,7 +100,7 @@ public class MenuManager {
 		System.out.println("If you want to look Menu, Press number 5");
 	}
 	
-	public void show_menu() {
+	public static void show_menu() {
 		//메뉴를 보여주는 함수
 		System.out.println("Hi! this is Grade-Management-Program!");
 		System.out.printf("** Select number! | Selected semester: %s semester**\n", selected_semester.semester);
