@@ -5,6 +5,10 @@ public class GradeCalculator {
 	private HashSet<SubjectInfo> set;
 	int gradeSum;
 	
+	public GradeCalculator() {
+		this.gradeSum = 0;
+	}
+	
 	public GradeCalculator(HashSet<SubjectInfo> set) {
 		this.gradeSum = 0;
 		this.set = set;

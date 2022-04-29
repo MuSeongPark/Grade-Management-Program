@@ -87,8 +87,5 @@ public class SubjectStorage extends SubjectInfo{
 		System.out.printf("Your %s semester Grade Average is %.2f\n", this.semester, cal.calculateGradeAvg(this));
 		
 	}
-	public HashSet getSubjectSet() {
-		return this.subjectSet;
-	}
 
 }
