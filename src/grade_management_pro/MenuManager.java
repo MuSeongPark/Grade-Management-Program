@@ -23,7 +23,7 @@ public class MenuManager {
 		while (true){
 			
 			int num = input.nextInt();
-			if (num == 6) {
+			if (num == 7) {
 				System.out.println("Grade-Management-Program is terminated");
 				break;
 			}
@@ -39,9 +39,12 @@ public class MenuManager {
 					check();
 					break;
 				case 4:
-					select_semester();
+					checkGrade();
 					break;
 				case 5:
+					select_semester();
+					break;
+				case 6:
 					show_menu();
 					break;
 					
@@ -54,20 +57,25 @@ public class MenuManager {
 	
 	public static void add_subject() {
 		selected_semester.addSubject(); //과목을 추가하는 함수
-		System.out.println("If you want to look Menu, Press number 5");
+		System.out.println("If you want to look Menu, Press number 6");
 	}
 	
 	public static void delete_subject() {
 		selected_semester.deleteSubject(); //과목을 제거하는 함수
-		System.out.println("If you want to look Menu, Press number 5");
+		System.out.println("If you want to look Menu, Press number 6");
 	}
 	
 	public static void check() {
 		selected_semester.print_subjectSet(); //선택된 학기의 모든 과목을 출력해주는 함수
-		//System.out.println("Your total grade is");
-		//학점의 총합에 대해 보여줄 공간
-		System.out.println("If you want to look Menu, Press number 5");
+		System.out.println("If you want to look Menu, Press number 6");
 
+	}
+	
+	public static void checkGrade() {
+		//이번 학기의 학점 평균을 출력
+		selected_semester.gradeAvg();
+		System.out.println("If you want to look Menu, Press number 6");
+		
 	}
 	
 	public static void select_semester() {
@@ -107,10 +115,11 @@ public class MenuManager {
 		
 		System.out.println("1. Add Subject");
 		System.out.println("2. Delete Subject");
-		System.out.println("3. Check my Subjects and Grade");
-		System.out.println("4. Select Semester");
-		System.out.println("5. Show Menu");
-		System.out.println("6. Exit");
+		System.out.println("3. Check my Subjects Info");
+		System.out.println("4. Check my Grade Avg");
+		System.out.println("5. Select Semester");
+		System.out.println("6. Show Menu");
+		System.out.println("7. Exit");
 		
 	}
 	

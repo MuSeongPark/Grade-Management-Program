@@ -9,7 +9,7 @@ public class SubjectStorage extends SubjectInfo{
 	//과목의 정보를 담고 있는 SubjectInfo 객체들을 담기 위한 HashSet
 	private HashSet<SubjectInfo> subjectSet = new HashSet<SubjectInfo>();
 	String semester;
-
+	
 	
 	SubjectStorage(String semester){
 		this.semester = semester;
@@ -20,22 +20,26 @@ public class SubjectStorage extends SubjectInfo{
 	public void addSubject() {
 		//추가할 과목에 대한 정보를 받아서 새로운 SubjectInfo 객체 생성 후, HashSet에 저장
 		Scanner input = new Scanner(System.in);
+		SubjectInfo subject = new SubjectInfo();
 
-		String name;
-		String prof;
-		int grade;
-		SubjectInfo subject;
+		String _name;
+		String _prof;
+		int _grade;
+		String _score;
 		
 		System.out.printf("Subject name: ");
-		name = input.nextLine();
+		_name = input.nextLine();
 		
 		System.out.printf("Subject professor: ");
-		prof = input.nextLine();
+		_prof = input.nextLine();
 		
 		System.out.printf("Subject grade: ");
-		grade = input.nextInt();
+		_grade = input.nextInt();
 		
-		subject = this.putSubjectInfo(name, prof, grade);
+		System.out.printf("Subject score: ");
+		_score = input.next();
+
+		subject.setSubjectInfo(_name, _prof, _grade, _score);
 		
 		subjectSet.add(subject);
 		System.out.println("Adding subject is completed!");
@@ -77,6 +81,14 @@ public class SubjectStorage extends SubjectInfo{
 			subject.print_subjectInfo();
 			
 		}
+	}
+	public void gradeAvg() {
+		GradeCalculator cal = new GradeCalculator(this.subjectSet);
+		System.out.printf("Your %s semester Grade Average is %.2f\n", this.semester, cal.calculateGradeAvg(this));
+		
+	}
+	public HashSet getSubjectSet() {
+		return this.subjectSet;
 	}
 
 }
