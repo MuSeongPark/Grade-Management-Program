@@ -5,9 +5,9 @@ import java.util.Scanner;
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class SubjectStorage extends SubjectInfo{
+public class SubjectStorage implements Manager {
 	//과목의 정보를 담고 있는 SubjectInfo 객체들을 담기 위한 HashSet
-	private HashSet<SubjectInfo> subjectSet = new HashSet<SubjectInfo>();
+	private HashSet<SubjectManager> subjectSet = new HashSet<SubjectManager>();
 	String semester;
 	
 	
@@ -20,7 +20,6 @@ public class SubjectStorage extends SubjectInfo{
 	public void addSubject() {
 		//추가할 과목에 대한 정보를 받아서 새로운 SubjectInfo 객체 생성 후, HashSet에 저장
 		Scanner input = new Scanner(System.in);
-		SubjectInfo subject = new SubjectInfo();
 
 		String _name;
 		String _prof;
@@ -38,8 +37,10 @@ public class SubjectStorage extends SubjectInfo{
 		
 		System.out.printf("Subject score: ");
 		_score = input.next();
+		
+		SubjectManager subject = new SubjectManager(_name, _prof, _grade, _score);
 
-		subject.setSubjectInfo(_name, _prof, _grade, _score);
+		//subject.setSubjectInfo(_name, _prof, _grade, _score);
 		
 		subjectSet.add(subject);
 		System.out.println("Adding subject is completed!");
@@ -47,10 +48,10 @@ public class SubjectStorage extends SubjectInfo{
 	
 	public void deleteSubject() {
 		Scanner input = new Scanner(System.in);
-		Iterator<SubjectInfo> iter = subjectSet.iterator();
-		SubjectInfo subject;
+		Iterator<SubjectManager> iter = subjectSet.iterator();
+		SubjectManager subject;
 		
-		print_subjectSet();
+		printSubject();
 		System.out.printf("Select one of your Subject: ");
 		String name = input.nextLine();
 		String saved_subject;
@@ -71,14 +72,14 @@ public class SubjectStorage extends SubjectInfo{
 		
 	}
 	
-	public void print_subjectSet() {
+	public void printSubject() {
 		//해당 학기의 모든 과목에 대한 정보를 출력하는 함수
-		Iterator<SubjectInfo> iter = subjectSet.iterator();
-		SubjectInfo subject;
+		Iterator<SubjectManager> iter = subjectSet.iterator();
+		SubjectManager subject;
 		System.out.printf("This is your %s semester information!\n", this.semester);
 		while(iter.hasNext()) {
 			subject = iter.next();
-			subject.print_subjectInfo();
+			subject.printSubject();
 			
 		}
 	}

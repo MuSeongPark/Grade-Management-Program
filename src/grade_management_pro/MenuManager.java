@@ -2,15 +2,7 @@ package grade_management_pro;
 
 import java.util.Scanner;
 
-public class MenuManager {
-	//MenuManager menu = new MenuManager();
-	
-	//4개의 학기에 대한 클래스 초기화
-	public static SubjectStorage winter_semester = new SubjectStorage("Winter");
-	public static SubjectStorage first_semester = new SubjectStorage("First");
-	public static SubjectStorage summer_semester = new SubjectStorage("Summer");
-	public static SubjectStorage second_semester = new SubjectStorage("Second");
-	
+public class MenuManager extends Semester{
 	//기본 설정값은 1학기(first semester)
 	public static SubjectStorage selected_semester = first_semester;
 	
@@ -30,13 +22,13 @@ public class MenuManager {
 			
 			switch (num) {
 				case 1:
-					add_subject();
+					add_Subject();
 					break;
 				case 2:
-					delete_subject();
+					delete_Subject();
 					break;
 				case 3:
-					check();
+					print_Subject();
 					break;
 				case 4:
 					checkGrade();
@@ -55,18 +47,18 @@ public class MenuManager {
 		
 	}
 	
-	public static void add_subject() {
+	public static void add_Subject() {
 		selected_semester.addSubject(); //과목을 추가하는 함수
 		System.out.println("If you want to look Menu, Press number 6");
 	}
 	
-	public static void delete_subject() {
+	public static void delete_Subject() {
 		selected_semester.deleteSubject(); //과목을 제거하는 함수
 		System.out.println("If you want to look Menu, Press number 6");
 	}
 	
-	public static void check() {
-		selected_semester.print_subjectSet(); //선택된 학기의 모든 과목을 출력해주는 함수
+	public static void print_Subject() {
+		selected_semester.printSubject(); //선택된 학기의 모든 과목을 출력해주는 함수
 		System.out.println("If you want to look Menu, Press number 6");
 
 	}
@@ -105,7 +97,7 @@ public class MenuManager {
 			}
 			System.out.println("Enter again plz!");
 		}
-		System.out.println("If you want to look Menu, Press number 5");
+		System.out.println("If you want to look Menu, Press number 6");
 	}
 	
 	public static void show_menu() {
