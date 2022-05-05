@@ -39,8 +39,6 @@ public class SubjectStorage implements Manager {
 		_score = input.next();
 		
 		SubjectManager subject = new SubjectManager(_name, _prof, _grade, _score);
-
-		//subject.setSubjectInfo(_name, _prof, _grade, _score);
 		
 		subjectSet.add(subject);
 		System.out.println("Adding subject is completed!");
