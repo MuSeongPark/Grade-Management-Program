@@ -21,9 +21,6 @@ public class SubjectManager extends Subject implements Manager {
 		return this.subjectName;
 	}
 	
-	public void addSubject() {
-		//과목에 대한 정보를 입력하는 함수
-	}
 		
 
 	
