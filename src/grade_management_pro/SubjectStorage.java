@@ -3,7 +3,10 @@ import java.util.Scanner;
 
 
 import java.util.HashSet;
+import java.util.InputMismatchException;
 import java.util.Iterator;
+
+
 
 public class SubjectStorage implements Manager {
 	//과목의 정보를 담고 있는 SubjectInfo 객체들을 담기 위한 HashSet
@@ -17,8 +20,8 @@ public class SubjectStorage implements Manager {
 	}
 	
 	
-	public void addSubject() {
-		//추가할 과목에 대한 정보를 받아서 새로운 SubjectInfo 객체 생성 후, HashSet에 저장
+	public void addSubject() throws InputMismatchException{
+		//추가할 과목에 대한 정보를 받아서 새로운 SubjectManager 객체 생성 후, HashSet에 저장
 		Scanner input = new Scanner(System.in);
 
 		String _name;
@@ -28,6 +31,7 @@ public class SubjectStorage implements Manager {
 		
 		System.out.printf("Subject name: ");
 		_name = input.nextLine();
+
 		
 		System.out.printf("Subject professor: ");
 		_prof = input.nextLine();

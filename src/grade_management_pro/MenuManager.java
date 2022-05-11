@@ -1,6 +1,7 @@
 package grade_management_pro;
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class MenuManager extends Semester{
 	//기본 설정값은 1학기(first semester)
@@ -48,7 +49,16 @@ public class MenuManager extends Semester{
 	}
 	
 	public static void add_Subject() {
-		selected_semester.addSubject(); //과목을 추가하는 함수
+		while(true) {
+			try {
+				selected_semester.addSubject(); //과목을 추가하는 함수
+				break;
+			}catch(InputMismatchException e) {
+				System.out.println("Error: Type Mismatch!");
+				System.out.println("Enter again");
+			}
+
+		}
 		System.out.println("If you want to look Menu, Press number 6");
 	}
 	
