@@ -1,15 +1,21 @@
 package grade_management_pro;
 
 import java.util.Scanner;
+import java.util.HashSet;
 import java.util.InputMismatchException;
+import java.util.Iterator;
 
 public class MenuManager extends Semester{
 	//기본 설정값은 1학기(first semester)
 	public static SubjectStorage selected_semester = first_semester;
-	
+	public static LogManager logmanager;
 
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
+		logmanager = new LogManager();
+		logLoading();
 		Scanner input = new Scanner(System.in);
 		show_menu();
 		
@@ -46,6 +52,23 @@ public class MenuManager extends Semester{
 			
 		}
 		
+	}
+	
+	public static void logLoading() {
+
+		HashSet<String> subData = logmanager.loadData();
+		Iterator<String> iter = subData.iterator();
+
+		int grade;
+		while(iter.hasNext()) {
+			String[] splitData;
+			String data = iter.next();
+			splitData = data.split(" ");
+			grade = Integer.parseInt(splitData[2]);
+			selected_semester.addSubjectForLog(splitData[0], splitData[1], grade, splitData[3]);
+		}
+
+
 	}
 	
 	public static void add_Subject() {

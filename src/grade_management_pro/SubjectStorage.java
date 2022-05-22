@@ -12,6 +12,8 @@ public class SubjectStorage implements Manager {
 	//과목의 정보를 담고 있는 SubjectInfo 객체들을 담기 위한 HashSet
 	private HashSet<SubjectManager> subjectSet = new HashSet<SubjectManager>();
 	String semester;
+	LogManager logmanager = new LogManager();
+	int subjectNum;
 	
 	
 	SubjectStorage(String semester){
@@ -28,6 +30,7 @@ public class SubjectStorage implements Manager {
 		String _prof;
 		int _grade;
 		String _score;
+		int size;
 		
 		System.out.printf("Subject name: ");
 		_name = input.nextLine();
@@ -43,9 +46,16 @@ public class SubjectStorage implements Manager {
 		_score = input.next();
 		
 		SubjectManager subject = new SubjectManager(_name, _prof, _grade, _score);
+		logmanager.writeLogFile(_name+" "+_prof+" "+_grade+" "+_score);
 		
 		subjectSet.add(subject);
 		System.out.println("Adding subject is completed!");
+	}
+	
+	public void addSubjectForLog(String _name, String _prof, int _grade, String _score) {
+		SubjectManager subject = new SubjectManager(_name, _prof, _grade, _score);
+		subjectSet.add(subject);
+		
 	}
 	
 	public void deleteSubject() {
@@ -90,5 +100,9 @@ public class SubjectStorage implements Manager {
 		System.out.printf("Your %s semester Grade Average is %.2f\n", this.semester, cal.calculateGradeAvg(this));
 		
 	}
+	/*
+	public int getSubjectNum() {
+		return subjectSet.size();
+	}*/
 
 }
