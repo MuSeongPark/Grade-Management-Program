@@ -19,6 +19,8 @@ public class MenuManager extends Semester{
 		Scanner input = new Scanner(System.in);
 		show_menu();
 		
+		UIManager ui = new UIManager();
+		
 		while (true){
 			
 			int num = input.nextInt();
