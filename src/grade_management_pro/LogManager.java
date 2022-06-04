@@ -9,8 +9,19 @@ import java.io.PrintWriter;
 import java.util.HashSet;
 
 public class LogManager {
-	//String[] datas;
+
 	public HashSet<String> subjectData = new HashSet<String>();
+	
+	public void resetLog() {
+		try {
+			PrintWriter printWriter = new PrintWriter("SubjectData.txt");
+			printWriter.close();
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+			
+		}
+	}
 
 
 	public void writeLogFile(String data) {
@@ -25,6 +36,8 @@ public class LogManager {
 			
 		}
 	}
+	
+
 	
 	public HashSet<String> loadData() {
 		try {

@@ -1,4 +1,3 @@
-OOP Seon_Ah_lee 3 A0
-Thermodynamics Jae_Hyun_Park 3 A0
+OOP Seon_Ah_Lee 3 A0
 Data_Structure Seong_Jin_James_Lee 3 A0
-Engineering_Mathmatics Susmit_Bagchi 3 A+
+Thermodynamics Jae_Hyun_Park 3 A0

@@ -2,25 +2,30 @@ package grade_management_pro;
 import java.util.*;
 
 public class GradeCalculator {
-	private HashSet<SubjectManager> set;
-	int gradeSum;
+	//private SubjectStorage subStr;
+	//int gradeSum;
 	
+	/*
 	public GradeCalculator() {
 		this.gradeSum = 0;
 	}
+	*/
 	
-	public GradeCalculator(HashSet<SubjectManager> set) {
-		this.gradeSum = 0;
-		this.set = set;
+	public GradeCalculator() {
+		//this.gradeSum = 0;
+		//this.subStr = subStr;
 		
 	}
 	
 	
-	public float calculateGradeAvg(SubjectStorage storage) {
+	public float calculateGradeAvg(SubjectStorage subStr) {
+		HashSet<SubjectManager> set = subStr.subjectSet;
+		
 		Iterator<SubjectManager> iter = set.iterator();
 		SubjectManager subject;
 		float avg;
 		float scoreSum = 0;
+		int gradeSum = 0;
 		
 		while(iter.hasNext()) {
 			subject = iter.next();
