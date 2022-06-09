@@ -16,7 +16,6 @@ public class ComboBXListener extends LogManager implements ActionListener {
 		
 	}
 
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -32,8 +31,7 @@ public class ComboBXListener extends LogManager implements ActionListener {
 			selected_semester = winter_semester;
 			this.textarea.setText("Winter semester selected!");
 			
-				
-				
+	
 		}else if (semester.equals("first")){
 			selected_semester = first_semester;
 			this.textarea.setText("First semester selected!");

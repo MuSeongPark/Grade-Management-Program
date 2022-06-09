@@ -62,7 +62,7 @@ public class MenuSelection extends JFrame{
 		view_button.setPreferredSize(new Dimension(80,40));
 		reset_button.setPreferredSize(new Dimension(80,40));
 		textarea.setText(intro);
-		//textarea.setBorder(BorderFactory.createEmptyBorder(40,30,40,30));
+
 		
 		textarea.setPreferredSize(new Dimension(400,100));
 		textarea.setEditable(false);
@@ -70,7 +70,7 @@ public class MenuSelection extends JFrame{
 		//listener »ý¼º
 		AddListener addButton_listener = new AddListener();
 		CheckListener check_sub_listener = new CheckListener();
-		ResetListener reset_listener = new ResetListener();
+		ResetListener reset_listener = new ResetListener(subStr);
 		CalculatorListener cal_listener = new CalculatorListener(textarea);
 		ComboBXListener cb_listener = new ComboBXListener(textarea);
 		

@@ -7,9 +7,9 @@ import java.util.Iterator;
 
 import gui.*;
 
-public class LoadMain extends LogManager implements Semester {
+public class LoadMain implements Semester {
 	
-	public static SubjectStorage selected_semester;
+	public SubjectStorage selected_semester;
 	
 	public LoadMain() {
 		

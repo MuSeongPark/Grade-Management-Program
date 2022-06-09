@@ -25,12 +25,13 @@ public class DeleteListener implements ActionListener{
 		DefaultTableModel model = (DefaultTableModel)table.getModel();
 		
 		model.removeRow(idx);
-		System.out.println("");
+		//System.out.println("");
 			
 		
 	}
 	//jtable에서 삭제한 후, 로그파일에 재로딩을 하기위한 함수
 	public void reload() {
+		//로그를 전부 초기화 한 후, 다시 집어넣는다.
 		logmanager.resetLog();
 		SubjectManager sub;
 		Iterator<SubjectManager> iter = this.subStr.subjectSet.iterator();

@@ -9,5 +9,9 @@ abstract public class Subject {
 	
 	
 	abstract public String getSubjectName();
+	abstract public String getProf();
+	abstract public int getGrade();
+	abstract public String getScore();
+
 
 }

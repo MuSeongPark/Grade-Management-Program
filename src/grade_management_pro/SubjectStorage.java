@@ -9,13 +9,12 @@ import java.util.Iterator;
 
 
 public class SubjectStorage {
-	//과목의 정보를 담고 있는 SubjectInfo 객체들을 담기 위한 HashSet
+	//과목의 정보를 담고 있는 SubjectManager 객체들을 담기 위한 HashSet
 	public HashSet<SubjectManager> subjectSet = new HashSet<SubjectManager>();
 	public String semester;
-	LogManager logmanager1 = new LogManager(this);
-	int subjectNum;
-	
-	
+	LogManager logmanager = new LogManager(this);
+
+
 	SubjectStorage(String semester){
 		this.semester = semester;
 
@@ -27,10 +26,10 @@ public class SubjectStorage {
 
 		int _intgrade = Integer.parseInt(_grade);
 		SubjectManager subject = new SubjectManager(_name, _prof, _intgrade, _score);
-		logmanager1.writeLogFile(_name+" "+_prof+" "+_grade+" "+_score);
+		logmanager.writeLogFile(_name+" "+_prof+" "+_grade+" "+_score);
 		
 		subjectSet.add(subject);
-		System.out.println("Adding subject is completed!");
+		//System.out.println("Adding subject is completed!"); 관리의 용이성을 위해 남겨둠
 	}
 	
 	public void addSubjectForLog(String _name, String _prof, int _grade, String _score) {
@@ -40,7 +39,7 @@ public class SubjectStorage {
 	}
 	
 	public void deleteSubject(String name) {
-		//Scanner input = new Scanner(System.in);
+
 		Iterator<SubjectManager> iter = subjectSet.iterator();
 		SubjectManager subject;
 		
@@ -52,12 +51,12 @@ public class SubjectStorage {
 			saved_subject = subject.getSubjectName();
 			if (saved_subject.equals(name)) {
 				subjectSet.remove(subject);
-				System.out.println("Delete Completed");
+				//System.out.println("Delete Completed"); //관리의 용이성을 위해 남겨둠
 				return; //조기 리턴
 			}
 		}
-		//과목명이 일치 하지 않으면 알려준다.
-		System.out.println("Delete Error! (incorrect name)");
+		//과목명이 일치 하지 않으면 알려준다. 아래 프린트문은 관리자가 수정하기 쉽도록 남겨놓은 부분.
+		//System.out.println("Delete Error! (incorrect name)");
 
 	}
 	

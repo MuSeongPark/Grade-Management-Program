@@ -15,8 +15,6 @@ public class EnterListener implements ActionListener{
 	private JTextField score_f;
 	
 	
-	
-	
 	public EnterListener(SubjectStorage subStr, JTextField name_f, JTextField prof_f, JTextField grade_f, JTextField score_f) {
 		
 		this.subStr = subStr;

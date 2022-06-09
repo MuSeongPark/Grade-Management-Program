@@ -24,6 +24,7 @@ public class LogManager implements Semester {
 	}
 	
 	public void resetLog() {
+		//로그파일 리셋
 		String semester = this.selected_semester.semester;
 		try {
 			PrintWriter printWriter = new PrintWriter(semester + "SubjectData.txt");
@@ -37,6 +38,7 @@ public class LogManager implements Semester {
 
 
 	public void writeLogFile(String data) {
+		//로그파일에 정보 저장
 		String semester = this.selected_semester.semester;
 		try {
 			PrintWriter printWriter = new PrintWriter(new FileWriter(semester + "SubjectData.txt", true));
@@ -53,6 +55,7 @@ public class LogManager implements Semester {
 
 	
 	public HashSet<String> loadData() {
+		//로그파일로부터 과목 정보들 로딩
 		String semester = this.selected_semester.semester;
 
 		try {
@@ -75,6 +78,7 @@ public class LogManager implements Semester {
 	}
 	
 	public void logLoading() {
+		//로딩된 과목 정보를 다시 과목 저장소에 저장(테이블에 나타내기 위함)
 		HashSet<String> subData = this.loadData();
 		Iterator<String> iter = subData.iterator();
 
