@@ -9,23 +9,22 @@ import grade_management_pro.*;
 
 
 
-public class CalculatorListener implements ActionListener{
-	private SubjectStorage subStr;
+public class CalculatorListener extends LogManager implements ActionListener{
+
 	private GradeCalculator cal = new GradeCalculator();
-	private float gradeAvg;
+	private Float gradeAvg;
 	private JTextArea textarea;
-	private String semester;
 	
-	public CalculatorListener(SubjectStorage subStr, JTextArea textarea, String semester) {
-		this.subStr = subStr;
+	public CalculatorListener(JTextArea textarea) {
 		this.textarea = textarea;
-		this.semester = semester;
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		this.gradeAvg = cal.calculateGradeAvg(this.subStr);
-		this.textarea.setText("Your " + this.semester+" semester Grade Average is " + this.gradeAvg);
+
+		this.gradeAvg = cal.calculateGradeAvg(selected_semester);
+		
+		if (this.gradeAvg.isNaN()) this.gradeAvg = 0f;
+		this.textarea.setText("Your " + selected_semester.semester +" semester Grade Average is " + this.gradeAvg);
 		
 		
 	}

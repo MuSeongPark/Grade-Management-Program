@@ -18,7 +18,6 @@ public class DeleteListener implements ActionListener{
 	public DeleteListener(JTable table, SubjectStorage subStr) {
 		this.table = table;
 		this.subStr = subStr;
-		//this.logmanager = logmanager;
 		
 	}
 	
@@ -61,9 +60,7 @@ public class DeleteListener implements ActionListener{
 			}catch(NullPointerException err) {
 				System.out.println("This is blank!!");
 			}
-			//name = table.getValueAt(row, 0).toString();
-			//remove(row);
-			//subStr.deleteSubject(name);
+
 			
 		}
 

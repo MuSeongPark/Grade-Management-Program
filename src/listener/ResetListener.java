@@ -5,13 +5,12 @@ import java.awt.event.ActionListener;
 import grade_management_pro.*;
 
 
-public class ResetListener implements ActionListener{
-	LogManager logmanager = new LogManager();
-	
+public class ResetListener extends LogManager implements ActionListener{
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		logmanager.resetLog();
+		resetLog();
 		
 	}
 	

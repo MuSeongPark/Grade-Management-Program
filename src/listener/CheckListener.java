@@ -8,18 +8,12 @@ import grade_management_pro.*;
 import gui.*;
 
 
-public class CheckListener implements ActionListener {
-	HashSet<SubjectManager> subjectSet;
-	SubjectStorage subStr;
-	
-	public CheckListener(SubjectStorage subStr) {
-		this.subStr = subStr;
+public class CheckListener extends LogManager implements ActionListener {
 
-	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		SubjectViewer subjectV = new SubjectViewer(this.subStr);
+		SubjectViewer subjectV = new SubjectViewer(selected_semester);
 		
 	}
 	

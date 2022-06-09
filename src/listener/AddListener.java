@@ -7,17 +7,13 @@ import gui.*;
 import grade_management_pro.*;
 
 
-public class AddListener implements ActionListener {
-	private SubjectStorage subStr;
-	
-	public AddListener(SubjectStorage subStr) {
-		this.subStr = subStr;
-	}
+public class AddListener extends LogManager implements ActionListener {
+
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		EnterGui enterGui = new EnterGui(this.subStr);
+		EnterGui enterGui = new EnterGui(selected_semester);
 		
 		
 	}

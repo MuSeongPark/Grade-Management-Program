@@ -29,7 +29,7 @@ public class SubjectViewer extends JFrame{
 		
 		String header[] = {"Subject", "Prof.", "Grade", "Score"};
 		String[][] contents = new String[num+1][4];
-		//String[] subject = new String[4];
+
 		
 		SubjectManager sub;
 		

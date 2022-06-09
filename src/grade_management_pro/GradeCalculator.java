@@ -2,21 +2,7 @@ package grade_management_pro;
 import java.util.*;
 
 public class GradeCalculator {
-	//private SubjectStorage subStr;
-	//int gradeSum;
-	
-	/*
-	public GradeCalculator() {
-		this.gradeSum = 0;
-	}
-	*/
-	
-	public GradeCalculator() {
-		//this.gradeSum = 0;
-		//this.subStr = subStr;
-		
-	}
-	
+
 	
 	public float calculateGradeAvg(SubjectStorage subStr) {
 		HashSet<SubjectManager> set = subStr.subjectSet;

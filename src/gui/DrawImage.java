@@ -18,8 +18,6 @@ public class DrawImage {
 		Image resized = img.getScaledInstance(400, 200, Image.SCALE_SMOOTH);
 		ImageIcon icon = new ImageIcon(resized);
 		
-
-		
 		JLabel lbl = new JLabel(icon);
 		
 

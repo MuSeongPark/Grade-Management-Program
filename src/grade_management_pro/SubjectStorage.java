@@ -8,11 +8,11 @@ import java.util.Iterator;
 
 
 
-public class SubjectStorage implements Manager {
+public class SubjectStorage {
 	//과목의 정보를 담고 있는 SubjectInfo 객체들을 담기 위한 HashSet
 	public HashSet<SubjectManager> subjectSet = new HashSet<SubjectManager>();
 	public String semester;
-	LogManager logmanager = new LogManager();
+	LogManager logmanager1 = new LogManager(this);
 	int subjectNum;
 	
 	
@@ -27,7 +27,7 @@ public class SubjectStorage implements Manager {
 
 		int _intgrade = Integer.parseInt(_grade);
 		SubjectManager subject = new SubjectManager(_name, _prof, _intgrade, _score);
-		logmanager.writeLogFile(_name+" "+_prof+" "+_grade+" "+_score);
+		logmanager1.writeLogFile(_name+" "+_prof+" "+_grade+" "+_score);
 		
 		subjectSet.add(subject);
 		System.out.println("Adding subject is completed!");

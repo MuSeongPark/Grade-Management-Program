@@ -18,7 +18,6 @@ import grade_management_pro.*;
 public class EnterGui extends JFrame {
 	//과목 입력을 위한 gui
 	public EnterGui(SubjectStorage subStr) {
-		//JFrame f = new JFrame();
 		
 		this.setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
 		this.setTitle("Add Subject");

@@ -23,7 +23,7 @@ import listener.*;
 import grade_management_pro.*;
 
 public class MenuSelection extends JFrame{
-	String semester[] = {"winter", "first", "summer", "second"};
+	String semester[] = {"first", "summer", "second", "winter"};
 	JComboBox<String> cb;
 	
 	public MenuSelection(SubjectStorage subStr) {
@@ -37,6 +37,7 @@ public class MenuSelection extends JFrame{
 		JPanel button_panel = new JPanel();
 		JTextArea textarea = new JTextArea();
 		cb = new JComboBox<String> (semester);
+		
 		
 		//레이아웃 생성
 		south_panel.setLayout(new BoxLayout(south_panel, BoxLayout.Y_AXIS));
@@ -61,17 +62,18 @@ public class MenuSelection extends JFrame{
 		textarea.setEditable(false);
 		
 		//listener 생성
-		AddListener addButton_listener = new AddListener(subStr);
-		CheckListener check_sub_listener = new CheckListener(subStr);
+		AddListener addButton_listener = new AddListener();
+		CheckListener check_sub_listener = new CheckListener();
 		ResetListener reset_listener = new ResetListener();
-		CalculatorListener cal_listener = new CalculatorListener(subStr, textarea, subStr.semester);
-		
+		CalculatorListener cal_listener = new CalculatorListener(textarea);
+		ComboBXListener cb_listener = new ComboBXListener(textarea);
 		
 		//listener 추가
 		add_button.addActionListener(addButton_listener);
 		view_button.addActionListener(check_sub_listener);
 		reset_button.addActionListener(reset_listener);
 		calculate_button.addActionListener(cal_listener);
+		cb.addActionListener(cb_listener);
 		
 		
 		//패널에 추가
