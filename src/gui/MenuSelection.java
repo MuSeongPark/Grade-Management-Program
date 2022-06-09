@@ -26,6 +26,10 @@ public class MenuSelection extends JFrame{
 	String semester[] = {"first", "summer", "second", "winter"};
 	JComboBox<String> cb;
 	
+	String intro = "  Hello! this is your Grade Management Program GNE! \n"
+			+ "  Nice to meet you!  \n"
+			+ "  Please select one of services!  ";
+	
 	public MenuSelection(SubjectStorage subStr) {
 
 		this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
@@ -57,6 +61,8 @@ public class MenuSelection extends JFrame{
 		calculate_button.setPreferredSize(new Dimension(80,40));
 		view_button.setPreferredSize(new Dimension(80,40));
 		reset_button.setPreferredSize(new Dimension(80,40));
+		textarea.setText(intro);
+		//textarea.setBorder(BorderFactory.createEmptyBorder(40,30,40,30));
 		
 		textarea.setPreferredSize(new Dimension(400,100));
 		textarea.setEditable(false);
@@ -82,7 +88,7 @@ public class MenuSelection extends JFrame{
 		button_panel.add(calculate_button);
 		
 		button_panel.add(reset_button);
-		button_panel.setBorder(BorderFactory.createEmptyBorder(40, 30, 40, 30));
+		button_panel.setBorder(BorderFactory.createEmptyBorder(20, 0, 40, 0));
 		
 		cb_panel.add(titlelabel);
 		cb_panel.add(selectlabel);
@@ -90,6 +96,8 @@ public class MenuSelection extends JFrame{
 		
 		south_panel.add(textarea);
 		south_panel.add(button_panel);
+		south_panel.setBorder(BorderFactory.createEmptyBorder(0,15,0,15));
+		
 		
 		
 		this.getContentPane().add(cb_panel, BorderLayout.NORTH);

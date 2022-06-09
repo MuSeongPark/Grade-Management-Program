@@ -14,6 +14,4 @@ public class ResetListener extends LogManager implements ActionListener{
 		
 	}
 	
-
-
 }

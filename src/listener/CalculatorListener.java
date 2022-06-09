@@ -20,11 +20,13 @@ public class CalculatorListener extends LogManager implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
+		
 		this.gradeAvg = cal.calculateGradeAvg(selected_semester);
 		
 		if (this.gradeAvg.isNaN()) this.gradeAvg = 0f;
-		this.textarea.setText("Your " + selected_semester.semester +" semester Grade Average is " + this.gradeAvg);
+		String format = String.format("%.2f", this.gradeAvg);
+		
+		this.textarea.setText("Your " + selected_semester.semester +" semester Grade Average is " + format);
 		
 		
 	}

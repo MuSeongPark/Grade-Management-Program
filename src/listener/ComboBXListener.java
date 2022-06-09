@@ -30,23 +30,23 @@ public class ComboBXListener extends LogManager implements ActionListener {
 
 		if (semester.equals("winter")) {
 			selected_semester = winter_semester;
-			this.textarea.setText("winter semester selected");
+			this.textarea.setText("Winter semester selected!");
 			
 				
 				
 		}else if (semester.equals("first")){
 			selected_semester = first_semester;
-			this.textarea.setText("first semester selected");
+			this.textarea.setText("First semester selected!");
 				
 			
 		}else if (semester.equals("summer")) {
 			selected_semester = summer_semester;
-			this.textarea.setText("summer semester selected");
+			this.textarea.setText("Summer semester selected!");
 				
 				
 		}else if (semester.equals("second")) {
 			selected_semester = second_semester;
-			this.textarea.setText("second semester selected");
+			this.textarea.setText("Second semester selected!");
 				
 		}
 
